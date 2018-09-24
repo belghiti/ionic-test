@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ajouter utilisateur</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (submit)="processAddUserForm()" [formGroup]="form">
+      <ion-list>
+
+          <ion-item>
+            <ion-label floating>Nom complet :</ion-label>
+            <ion-input formControlName="fullname" type="text" value=""></ion-input>
+          </ion-item>
+
+        <ion-item>
+          <ion-label floating>Utilisateur :</ion-label>
+          <ion-input formControlName="username" type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Mot de passe :</ion-label>
+          <ion-input formControlName="password" type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Email :</ion-label>
+          <ion-input formControlName="email" type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Telephone :</ion-label>
+          <ion-input formControlName="telephone" type="text"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button block type="submit">Ajouter</button>
+    </div>
+
+  </form>
+</ion-content>
+

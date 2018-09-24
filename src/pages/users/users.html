@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Liste des utilisateurs</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <ion-list>
+    <ion-item-sliding *ngFor="let user of usersList">
+      <ion-item (click)="onViewUser(user)">
+        <h2>{{ user.username }}</h2>
+        <p>{{ user.fullname }}</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="secondary" (click)="onEditUser(user)" icon-start>
+          <ion-icon name="edit"></ion-icon>
+          Modifier
+        </button>
+        <button ion-button color="danger" (click)="onDeleteUser(user)" icon-start>
+          <ion-icon name="delete"></ion-icon>
+          Supprimer
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="secondary"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="onAddUser()"><ion-icon name="create"></ion-icon></button>
+      <button ion-fab (click)="onLogOut()"><ion-icon name="log-out"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  
+</ion-content>
+

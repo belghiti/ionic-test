@@ -1,14 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Page d'authentification
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div *ngIf="isConnected == false">
+    <form (submit)="processForm()" [formGroup]="form">
+        <ion-list>
+
+          <ion-item>
+            <ion-label floating>Utilisateur :</ion-label>
+            <ion-input formControlName="username" aria-placeholder="admin" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Mot de passe :</ion-label>
+            <ion-input formControlName="password" aria-placeholder="admin" type="password"></ion-input>
+          </ion-item>
+          
+      </ion-list>
+
+      <div padding>
+        <button ion-button block type="submit">Se Connecter</button>
+      </div>
+
+    </form>
+  </div>
+  <div *ngIf="isConnected == true">
+    <div padding>
+        <button ion-button block (click)="onLogOut()">Se Deconnecter</button>
+    </div>
+    <div padding>
+        <button ion-button block (click)="onUsersLoad()">Liste des utilsateurs</button>
+    </div>
+  </div>
 </ion-content>

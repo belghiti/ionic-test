@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ user.username }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      {{ user.fullname }}
+    </ion-card-header>
+  
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        Email : {{ user.email }}
+      </button>
+  
+      <button ion-item>
+        <ion-icon name="call" item-start></ion-icon>
+        Telephone : {{ user.telephone }}
+      </button>
+
+    </ion-list>
+  </ion-card>
+</ion-content>
